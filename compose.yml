@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: "${{ github.event.repository.name }}"
+    networks:
+      - server
+    ports:
+      - 5800:4800
+    restart: always
+networks:
+  server:
+    external: true

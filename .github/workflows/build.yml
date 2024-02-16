@@ -1,0 +1,31 @@
+name: GitHub Pipeline
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+
+env:
+  TEST_IMAGE: node:18.18-alpine3.18
+  BUILD_IMAGE: docker:dind
+
+jobs:
+  connect-to-vps-main:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Connect to EC2 instance and Deploy container
+        run: |
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null" root@"${{ secrets.SERVER_IP_ADDRESS }}" "
+            cd ~/repo/"${{ github.event.repository.name }}"
+            git checkout main
+            git pull origin main
+            echo '${{ secrets.ENV_PROD}}' > .env.local
+            npm i
+            npm run build
+            docker-compose up -d

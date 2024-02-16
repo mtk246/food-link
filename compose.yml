@@ -8,6 +8,9 @@ services:
     ports:
       - 5800:4800
     restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
 networks:
   server:
     external: true

@@ -1,43 +1,47 @@
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+    --max-width: 1100px;
+    --border-radius: 12px;
+    --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+        "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+        "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
+    --primary-glow: conic-gradient(
+        from 180deg at 50% 50%,
+        #16abff33 0deg,
+        #0885ff33 55deg,
+        #54d6ff33 120deg,
+        #0071ff33 160deg,
+        transparent 360deg
+    );
+    --secondary-glow: radial-gradient(
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0)
+    );
 
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
+    --tile-start-rgb: 239, 245, 249;
+    --tile-end-rgb: 228, 232, 233;
+    --tile-border: conic-gradient(
+        #00000080,
+        #00000040,
+        #00000030,
+        #00000020,
+        #00000010,
+        #00000010,
+        #00000080
+    );
 
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+    --callout-rgb: 238, 240, 241;
+    --callout-border-rgb: 172, 175, 176;
+    --card-rgb: 180, 185, 188;
+    --card-border-rgb: 131, 134, 135;
+
+    .text-primary {
+        color: #455C82 !important;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -110,29 +114,29 @@ header {
     align-items: center;
     display: flex;
     font-size: 18px;
-    height: 100vh;
+    height: 80vh;
     justify-content: center;
     overflow: hidden;
     position: relative;
     text-align: center;
     transform-style: preserve-3d;
     perspective: 100px;
-  }
+}
 
-  header:before {
+header:before {
     background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.8)),
                 url(https://www.insidebusinessnyc.com/wp-content/uploads/2013/04/cityharvest2.jpg) no-repeat bottom;
     background-size: cover;
     content: "";
     position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: -1;
-  }
+}
 
-  header:after {
+header:after {
     background: #F9FCFF;
     content: "";
     height: 40rem;
@@ -143,19 +147,111 @@ header {
     transform-origin: 0 0;
     transform: rotateZ(-4deg);
     z-index: 0;
-  }
+}
 
-  .header-title, .header-subtitle {
+.header-title, .header-subtitle {
     color: #fff;
-  }
+}
 
-  .header-subtitle {
+.header-subtitle {
     text-transform: uppercase;
     margin-bottom: 5rem;
-  }
+}
 
-  .header-button {
+.header-button {
     transform: translateZ(.1px);
     position: relative;
     z-index: 10;
-  }
+}
+
+.pagination-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+
+.section_padding_130 {
+    padding-top: 130px;
+    padding-bottom: 130px;
+}
+.faq_area {
+    position: relative;
+    z-index: 1;
+    background-color: #f5f5ff;
+}
+
+.faq-accordian {
+    position: relative;
+    z-index: 1;
+}
+.faq-accordian .card {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1.5rem;
+}
+.faq-accordian .card:last-child {
+    margin-bottom: 0;
+}
+.faq-accordian .card .card-header {
+    background-color: #ffffff;
+    padding: 0;
+    border-bottom-color: #ebebeb;
+}
+.faq-accordian .card .card-header h6 {
+    cursor: pointer;
+    padding: 1.75rem 2rem;
+    color: #3f43fd;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.faq-accordian .card .card-header h6 span {
+    font-size: 1.5rem;
+}
+.faq-accordian .card .card-header h6.collapsed {
+    color: #070a57;
+}
+.faq-accordian .card .card-header h6.collapsed span {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+.faq-accordian .card .card-body {
+    padding: 1.75rem 2rem;
+}
+.faq-accordian .card .card-body p:last-child {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 575px) {
+    .support-button p {
+        font-size: 14px;
+    }
+}
+
+.support-button i {
+    color: #3f43fd;
+    font-size: 1.25rem;
+}
+@media only screen and (max-width: 575px) {
+    .support-button i {
+        font-size: 1rem;
+    }
+}
+
+.support-button a {
+    text-transform: capitalize;
+    color: #2ecc71;
+}
+@media only screen and (max-width: 575px) {
+    .support-button a {
+        font-size: 13px;
+    }
+}

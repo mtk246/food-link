@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRobot, faComputer} from "@fortawesome/free-solid-svg-icons";
 
 export default function Features() {
     return (
         <div>
-            <div className="d-sm-flex align-items-center justify-content-between w-100" style={{height: '70vh'}}>
+            <div className="container d-flex align-items-center justify-content-center w-100 rounded" style={{height: '70vh', backgroundColor: '#F0F4FC'}}>
                 <div className="col-md-4 mx-auto mb-4 mb-sm-0 headline px-5">
                     <span className="text-secondary text-uppercase">Forging Futures for </span>
                     <h1 className="display-4 my-4 font-weight-bold">Empowering <span style={{ color: 'forestgreen' }}>Low-income Families</span></h1>
@@ -13,28 +15,24 @@ export default function Features() {
                     </Link>
                     <p className="mt-4 text-muted">Using advanced algorithms, our platform provides tailored recommendations for optimal well-being, revolutionizing how users approach their diet and lifestyle choices...</p>
                 </div>
-                <div
-                    className="col-md-8 h-100 clipped"
-                    style={{ minHeight: '350px', backgroundImage: 'url(https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80)', backgroundPosition: 'center', backgroundSize: 'cover' }}
-                >
+                <div>
+                    <Image
+                        src="/assets/images/features_bg.png"
+                        alt="Picture of the author"
+                        className="img-fluid"
+                        width={500}
+                        height={500}
+                    />
                 </div>
-                <a href="https://componentity.com" target="_blank" className="block">
-                <Image
-                    src="/assets/images/image.png"
-                    width={120}
-                    height={120}
-                    className="d-block mx-auto my-5"
-                    alt="Componentity"
-                />
-                </a>
             </div>
             <div
-                className="d-flex align-items-center justify-content-center w-50 m-auto my-5 rounded text-white"
-                style={{ backgroundColor: 'forestgreen'}}
+                className="d-flex align-items-center justify-content-center w-75 m-auto my-5 rounded border p-5"
             >
                 <div className="d-flex align-items-center justify-content-center">
                     <div>
-                        logo
+                        <h1 className="text-success text-center display-1 p-4">
+                            <FontAwesomeIcon icon={faComputer} />
+                        </h1>
                     </div>
                     <div>
                         <h4>Get Nutrition Advise</h4>
@@ -43,7 +41,9 @@ export default function Features() {
                 </div>
                 <div className="d-flex align-items-center justify-content-center">
                     <div>
-                        logo
+                        <h1 className="text-success text-center display-1 p-4">
+                            <FontAwesomeIcon icon={faRobot} />
+                        </h1>
                     </div>
                     <div>
                         <h4>Nutrition Chatbot</h4>

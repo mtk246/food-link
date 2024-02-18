@@ -8,15 +8,15 @@ export default function Contact() {
             <div>
                 <form className="form-control p-5 rounded shadow">
                     <div className="mb-3">
-                        <label for="name" className="form-label">Full Name</label>
+                        <label htmlhtmlhtmlFor="name" className="form-label">Full Name</label>
                         <input type="text" className="form-control" id="name" aria-describedby="nameHelp" />
                     </div>
                     <div className="mb-3">
-                        <label for="email" className="form-label">Email</label>
+                        <label htmlhtmlhtmlFor="email" className="form-label">Email</label>
                         <input type="email" className="form-control" id="email" />
                     </div>
                     <div className="mb-3">
-                        <label for="textarea" className="form-label">Your Message <span className="text-danger"> * </span></label>
+                        <label htmlhtmlhtmlFor="textarea" className="form-label">Your Message <span className="text-danger"> * </span></label>
                         <textarea className="form-control" id="textarea" rows="3"></textarea>
                     </div>
                     <button type="submit" className="btn btn-outline-success">Submit</button>

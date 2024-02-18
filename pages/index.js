@@ -19,7 +19,7 @@ export default function Home() {
                 <div className="col-md-4 mx-auto mb-4 mb-sm-0 headline px-5">
                     <h1 className="display-4 my-4 font-weight-bold"><span style={{ color: 'forestgreen' }}>Explore Your City On Any Budget</span></h1>
                     <p className="mt-4 text-muted">
-                        Our mission is to help low-income families find nearby food banks, EBT-friendly eateries, and affordable options for leftover food, ensuring access to essential resources and support in their communities.
+                        Our mission is to reduce food waste and ensure that everyone has access to nutritious meals, supporting a healthier community and a more sustainable world
                     </p>
                 </div>
                 <div

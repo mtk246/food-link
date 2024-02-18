@@ -108,7 +108,7 @@ export default function FoodBankDetails() {
                                 <div className='col-12 col-md-6'>
                                     <div className='my-2 border rounded shadow p-4'>
                                         <small className='text-muted py-3'>Price Range ({data.location.price_level})</small>
-                                        <h1 className='display-5 fw-bold'>{data.location.price}</h1>
+                                        <h1 className='display-5 fw-bold'>$ 4.99</h1>
                                     </div>
                                     <div className='my-2 border rounded shadow p-4'>
                                         <small className='text-muted py-3'>Opening Times</small>

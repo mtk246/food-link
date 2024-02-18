@@ -5,6 +5,7 @@ import Link from "next/link";
 export default function HeaderComponent() {
     return (
         <div>
+            // comment
             <Head>
                 <title>FoodLink</title>
                 <meta name="description" content="FoodLink" />

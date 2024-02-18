@@ -1,7 +1,10 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRotate, faCircleInfo, faTicket} from "@fortawesome/free-solid-svg-icons";
+
 export default function AboutUs() {
     return (
         <div className="container">
-            <h3 className="text-primary">Why us?</h3>
+            <h3 className="text-success fw-bold">Why us?</h3>
             <div className="row my-5 align-items-center">
                 <div className="col-12 col-md-6">
                     <h1 className="display-2 fw-bold">We are the team of enthusiasts</h1>
@@ -14,25 +17,37 @@ export default function AboutUs() {
             </div>
             <div className="row my-5 align-items-center">
                 <div className="col-12 col-md-4">
-                    <p>icon</p>
-                    <h3>Relevant Resource Access</h3>
-                    <p className="text-muted">
-                        Our platform provides a centralized hub for accessing a wide range of resources tailored to the needs of low-income individuals and families.
-                    </p>
+                    <div className="border rounded shadow p-3">
+                        <h1 className="text-success text-center display-1">
+                            <FontAwesomeIcon icon={faCircleInfo} />
+                        </h1>
+                        <h3>Relevant Resource Access</h3>
+                        <p className="text-muted">
+                            Our platform provides a centralized hub for accessing a wide range of resources tailored to the needs of low-income individuals and families.
+                        </p>
+                    </div>
                 </div>
                 <div className="col-12 col-md-4">
-                    <p>icon</p>
-                    <h3>Real-Time Updates</h3>
-                    <p className="text-muted">
-                        By leveraging NYC data API resources, we ensure that our platform is continuously updated with the latest information on available resources.
-                    </p>
+                    <div className="border rounded shadow p-3">
+                        <h1 className="text-success text-center display-1">
+                            <FontAwesomeIcon icon={faRotate} />
+                        </h1>
+                        <h3>Real-Time Updates</h3>
+                        <p className="text-muted">
+                            By leveraging NYC data API resources, we ensure that our platform is continuously updated with the latest information on available resources.
+                        </p>
+                    </div>
                 </div>
                 <div className="col-12 col-md-4">
-                    <p>icon</p>
-                    <h3>Community Support</h3>
-                    <p className="text-muted">
-                        Beyond simply providing access to resources, our goal is committed to fostering a community support, empowerment in low-income individuals.
-                    </p>
+                    <div className="border rounded shadow p-3">
+                        <h1 className="text-success text-center display-1">
+                            <FontAwesomeIcon icon={faTicket} />
+                        </h1>
+                        <h3>Community Support</h3>
+                        <p className="text-muted">
+                            Beyond simply providing access to resources, our goal is committed to fostering a community support, empowerment in low-income individuals.
+                        </p>
+                    </div>
                 </div>
             </div>
             <div className="faq_area section_padding_130" id="faq">

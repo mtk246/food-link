@@ -54,12 +54,12 @@ export default function EBT() {
                     <button className="btn btn-outline-secondary m-2" onClick={() => handleBoroughChange('Queens')}>Queens</button>
                     <button className="btn btn-outline-secondary m-2" onClick={() => handleBoroughChange('Staten Island')}>Staten Island</button>
                 </div>
-                <div>
+                {/* <div>
                     <select className="form-select">
                         <option value="0" selected>List View</option>
                         <option value="1">Map View</option>
                     </select>
-                </div>
+                </div> */}
             </div>
             <div className="container">
                 <div className="row">
@@ -74,7 +74,7 @@ export default function EBT() {
                         </div>
                     ))}
                 </div>
-                <div className="pagination-container">
+                <div className="pagination-container overflow-auto">
                     <ul className="pagination p-2">
                         {Array.from({ length: Math.ceil(data.length / itemsPerPage) }).map((_, index) => (
                             <li key={index} className={currentPage === index + 1 ? 'active' : ''}>

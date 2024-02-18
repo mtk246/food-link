@@ -1,7 +1,8 @@
-import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
-export default function EBT() {
+export default function PackedMeals() {
     const [data, setData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [borough, setBorough] = useState("");
@@ -19,19 +20,36 @@ export default function EBT() {
 
     const fetchData = async () => {
         try {
-            let response = "";
-            if (borough !== "") {
-                response = await fetch(`https://data.cityofnewyork.us/resource/fi97-k4k6.json?borough=${borough}&$limit=5000&$$app_token=${process.env.OPEN_DATA_TOKEN}`);
+            let locationId = "";
+            
+            if (borough === "Manhattan") {
+                locationId = "38877";
+            } else if (borough === "Brooklyn") {
+                locationId = "60827";
+            } else if (borough === "Bronx") {
+                locationId = "47369";
+            } else if (borough === "Queens") {
+                locationId = "616325";
+            } else if (borough === "Staten Island") {
+                locationId = "48682";
             } else {
-                response = await fetch(`https://data.cityofnewyork.us/resource/fi97-k4k6.json?$limit=5000&$$app_token=${process.env.OPEN_DATA_TOKEN}`);
+                locationId = "60763";
             }
 
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
+            const url = process.env.TRIP_ADVISOR_API_URL + '?locationId=' + locationId;
+            const options = {
+                method: 'GET',
+                headers: {
+                    'content-type': 'application/json',
+                    'X-RapidAPI-Key': process.env.GPT_X_RAPID_API_KEY,
+                    'X-RapidAPI-Host': process.env.TRIP_ADVISOR_API_HOST
+                }
+            };
+
+            const response = await fetch(url, options);
             const responseData = await response.json();
             console.log(responseData);
-            setData(responseData);
+            setData(responseData.data.data);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -54,22 +72,39 @@ export default function EBT() {
                     <button className="btn btn-outline-secondary m-2" onClick={() => handleBoroughChange('Queens')}>Queens</button>
                     <button className="btn btn-outline-secondary m-2" onClick={() => handleBoroughChange('Staten Island')}>Staten Island</button>
                 </div>
-                <div>
+                {/* <div>
                     <select className="form-select">
                         <option value="0" selected>List View</option>
                         <option value="1">Map View</option>
                     </select>
-                </div>
+                </div> */}
             </div>
             <div className="container">
                 <div className="row">
                     {currentItems.map((item, index) => (
                         <div key={index} className="col col-md-3 col-lg-4">
-                            <div className="card p-2 shadow m-2">
-                                <h5>{item.marketname}</h5>
-                                <p>{item.daysoperation} | {item.hoursoperations}</p>
-                                <span className='text-muted'>{item.streetaddress}</span>
-                                <Link href={`/ebt/${item.marketname}`}><button className="btn btn-outline-primary mt-2">View Details</button></Link>
+                            <div className="card p-2 shadow m-2 text-center">
+                                <div className="text-center">
+                                    {
+                                        item.currentOpenStatusCategory === "OPEN"
+                                    }
+                                    <Image src={item.squareImgUrl} alt={item.name} width={200} height={200} className='img-fluid rounded' />
+                                </div>
+                                <div className='my-3'>
+                                    <h5>{item.name}</h5>
+                                    <p>
+                                        {
+                                            item.currentOpenStatusCategory === "OPEN"
+                                                ? <span className="text-success">{item.currentOpenStatusText}</span>
+                                                : <span className="text-danger">{item.currentOpenStatusText}</span>
+                                        }
+                                    </p>
+                                </div>
+                                <Link href={`/packed_meal/${item.restaurantsId}`}>
+                                    <button className="btn btn-outline-primary my-2">
+                                        View Details
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     ))}

@@ -48,7 +48,7 @@ export default function PackedMeals() {
 
             const response = await fetch(url, options);
             const responseData = await response.json();
-            console.log(responseData);
+            // console.log(responseData);
             setData(responseData.data.data);
         } catch (error) {
             console.error('Error fetching data:', error);

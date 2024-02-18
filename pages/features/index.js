@@ -11,7 +11,7 @@ export default function Features() {
                     <span className="text-secondary text-uppercase">Forging Futures for </span>
                     <h1 className="display-4 my-4 font-weight-bold">Empowering <span style={{ color: 'forestgreen' }}>Low-income Families</span></h1>
                     <Link href="/resources" className="btn px-5 py-3 text-white mt-3 mt-sm-0" style={{ borderRadius: '30px', backgroundColor: 'forestgreen' }}>
-                        Get Started
+                        Get Started using our Bot
                     </Link>
                     <p className="mt-4 text-muted">Using advanced algorithms, our platform provides tailored recommendations for optimal well-being, revolutionizing how users approach their diet and lifestyle choices...</p>
                 </div>
@@ -66,7 +66,7 @@ export default function Features() {
                         Our AI-powered chatbot process automation to streamline your meal planning. Or, get started instantly<br/>with UltimateGPT, our new generative AI-powered bot for meal support.
                     </p>
                     <Link href="/resources" className="btn px-5 py-3 text-white mt-3 mt-sm-0" style={{ borderRadius: '30px', backgroundColor: 'forestgreen' }}>
-                        Get Started
+                        Get Started using our Bot
                     </Link>
                 </div>
             </div>

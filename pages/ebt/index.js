@@ -30,7 +30,7 @@ export default function EBT() {
                 throw new Error('Network response was not ok');
             }
             const responseData = await response.json();
-            console.log(responseData);
+            // console.log(responseData);
             setData(responseData);
         } catch (error) {
             console.error('Error fetching data:', error);

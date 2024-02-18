@@ -53,7 +53,7 @@ export default function Resources() {
                 <h2 className='display-5 fw-bold text-secondary'>FoodLink GPT</h2>
             </div>
             <div className="row">
-                <div className='col col-md-2'>
+                {/* <div className='col col-md-2'>
                     <button
                         className="btn btn-outline-primary m-2"
                         onClick={handleClick}
@@ -93,8 +93,8 @@ export default function Resources() {
                             </div>
                         </div>
                     </button>
-                </div>
-                <div className='col col-md-10 px-3'>
+                </div> */}
+                <div className='col col-md-12 p-5'>
                     <div className="chat-log">
                         {conversationLog.map((message, index) => (
                             <div

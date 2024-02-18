@@ -1,6 +1,8 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSuitcaseMedical, faXmark, faSitemap,faMobile, faClock, faWallet} from "@fortawesome/free-solid-svg-icons";
 
 export default function FoodBankDetails() {
     const router = useRouter();
@@ -8,7 +10,7 @@ export default function FoodBankDetails() {
     const [data, setData] = useState({});
 
     useEffect(() => {
-        console.log(id);
+        // console.log(id);
         fetchData();
     }, [id]);
 
@@ -26,7 +28,7 @@ export default function FoodBankDetails() {
 
             const response = await fetch(url, options);
             const responseData = await response.json();
-            console.log(responseData);
+            // console.log(responseData);
             setData(responseData.data);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -45,32 +47,60 @@ export default function FoodBankDetails() {
                                 <div className="col-12 col-md-6">
                                     <Image src={data.location.photo.images.original.url} alt={data.location.photo.caption} width={800} height={400} className='img-fluid rounded shadow' />
                                     <div className='my-5 d-flex align-items-center justify-content-around'>
-                                        <div>
-                                            <div className='py-3'>
-                                                <h5>No Cancellation</h5>
-                                                <p className='text-secondary'>No cancellation is allowed</p>
+                                        <div className='row'>
+                                            <div className='col col-md-6 d-flex align-items-center py-3'>
+                                                <div className='text-success display-5 p-3'>
+                                                    <FontAwesomeIcon icon={faXmark} />
+                                                </div>
+                                                <div>
+                                                    <h5>No Cancellation</h5>
+                                                    <p className='text-secondary'>No cancellation is allowed</p>
+                                                </div>
                                             </div>
-                                            <div className='py-3'>
-                                                <h5>Mobile Ticketing</h5>
-                                                <p className='text-secondary'>Use your phone or print your voucher</p>
+                                            <div className='col col-md-6 d-flex align-items-center py-3'>
+                                                <div className='text-success display-5 p-3'>
+                                                    <FontAwesomeIcon icon={faSuitcaseMedical} />
+                                                </div>
+                                                <div>
+                                                    <h5>Health precautions</h5>
+                                                    <p className='text-secondary'>Special health and safety measures apply.</p>
+                                                </div>
                                             </div>
-                                            <div className='py-3'>
-                                                <h5>Participation</h5>
-                                                <p className='text-secondary'>Everyone is welcomed!</p>
+                                            <div className='col col-md-6 d-flex align-items-center py-3'>
+                                                <div className='text-success display-5 p-3'>
+                                                    <FontAwesomeIcon icon={faMobile} />
+                                                </div>
+                                                <div>
+                                                    <h5>Mobile Ticketing</h5>
+                                                    <p className='text-secondary'>Use your phone or print your voucher</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div>
-                                            <div className='py-3'>
-                                                <h5>Health precautions</h5>
-                                                <p className='text-secondary'>Special health and safety measures apply.</p>
+                                            <div className='col col-md-6 d-flex align-items-center py-3'>
+                                                <div className='text-success display-5 p-3'>
+                                                    <FontAwesomeIcon icon={faClock} />
+                                                </div>
+                                                <div>
+                                                    <h5>Pick Up Time</h5>
+                                                    <p className='text-secondary'>Check availability to see starting times.</p>
+                                                </div>
                                             </div>
-                                            <div className='py-3'>
-                                                <h5>Pick Up Time</h5>
-                                                <p className='text-secondary'>Check availability to see starting times.</p>
+                                            <div className='col col-md-6 d-flex align-items-center py-3'>
+                                                <div className='text-success display-5 p-3'>
+                                                    <FontAwesomeIcon icon={faSitemap} />
+                                                </div>
+                                                <div>
+                                                    <h5>Participation</h5>
+                                                    <p className='text-secondary'>Everyone is welcomed!</p>
+                                                </div>
                                             </div>
-                                            <div className='py-3'>
-                                                <h5>Pay in restaurant</h5>
-                                                <p className='text-secondary'>Pay at the restaurant, with options for cash or card.</p>
+                                            <div className='col col-md-6 d-flex align-items-center py-3'>
+                                                <div className='text-success display-5 p-3'>
+                                                    <FontAwesomeIcon icon={faWallet} />
+                                                </div>
+                                                <div>
+                                                    <h5>Pay in restaurant</h5>
+                                                    <p className='text-secondary'>Pay at the restaurant, with options for cash or card.</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

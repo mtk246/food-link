@@ -1,9 +1,15 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function HeaderComponent() {
     return (
         <div>
+            <Head>
+                <title>FoodLink</title>
+                <meta name="description" content="FoodLink" />
+                <link rel="icon" href="/assets/images/logo.png" />
+            </Head>
             <nav className="navbar  navbar-expand-lg navbar-light top-navbar" data-toggle="sticky-onscroll">
                 <div className="container">
                     <Link className="navbar-brand" href="/">
